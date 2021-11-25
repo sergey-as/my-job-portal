@@ -1,0 +1,351 @@
+{
+	"info": {
+		"_postman_id": "21faf4df-7611-4cb4-94bd-0e380f627b5b",
+		"name": "my-job-portal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Applicant",
+			"item": [
+				{
+					"name": "GET",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_host}}/applicants",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"applicants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"you1.mail@mail.run\",\r\n    \"categories\": [\"react\", \"angular\"],\r\n    \"level\": \"middle\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_host}}/applicants",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"applicants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT by id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"you2.mail@mail.run\",\r\n    \"categories\": [\"react\", \"angular\"],\r\n    \"level\": \"middle\",\r\n    \"japaneseKnowledge\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_host}}/applicants/619e101613d7e08bf158203f",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"applicants",
+								"619e101613d7e08bf158203f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_host}}/applicants/619e101613d7e08bf158203f",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"applicants",
+								"619e101613d7e08bf158203f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Position",
+			"item": [
+				{
+					"name": "CREATE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category\": \"nodejs\",\r\n    \"level\": \"junior\",\r\n    \"company\": \"Rakuten\",\r\n    \"description\": \"We are looking for people who are flexible and highly skilled, with an interest in languages and other cultures. We are open to overseas candidates looking to relocate to Japan.\",\r\n    \"japaneseRequired\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_host}}/positions",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"positions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category\": \"angular\",\r\n    \"level\": \"junior\",\r\n    \"company\": \"Raketa\",\r\n    \"description\": \"We are looking for people who are flexible and highly skilled, with an interest in languages and other cultures. We are open to overseas candidates looking to relocate to Japan.\",\r\n    \"japaneseRequired\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_host}}/positions",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"positions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_host}}/positions?company=kut",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"positions"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "nodejs",
+									"disabled": true
+								},
+								{
+									"key": "level",
+									"value": "middle",
+									"disabled": true
+								},
+								{
+									"key": "japaneseRequired",
+									"value": "false",
+									"disabled": true
+								},
+								{
+									"key": "japaneseRequired",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "company",
+									"value": "kut"
+								},
+								{
+									"key": "tag",
+									"value": "relocat",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_host}}/positions/619fb3bfe85f0464229ef9a4",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"positions",
+								"619fb3bfe85f0464229ef9a4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH by id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"We are looking for people who are flexible and highly skilled, with an interest in languages and other cultures. We are open to overseas candidates looking to relocate to Japan.\",\r\n    \"japaneseRequired\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_host}}/positions/619fb3bfe85f0464229ef9a4",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"positions",
+								"619fb3bfe85f0464229ef9a4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH by id Copy",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"japaneseRequired\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_host}}/positions/619fb3bfe85f0464229ef9a4",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"positions",
+								"619fb3bfe85f0464229ef9a4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_host}}/positions/619fb3bfe85f0464229ef9a4",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"positions",
+								"619fb3bfe85f0464229ef9a4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

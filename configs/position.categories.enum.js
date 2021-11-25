@@ -3,4 +3,5 @@ module.exports = {
     ANGULAR: 'angular',
     JAVASCRIPT: 'javascript',
     REACT: 'react'
+
 };

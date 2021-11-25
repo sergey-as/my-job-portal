@@ -1,6 +1,6 @@
 const {model, Schema} = require('mongoose');
 
-const {positionCategories, positionLevels} = require("../configs");
+const {positionCategoriesEnum, positionLevelsEnum} = require('../configs');
 const modelDefinition = require('./model.definition');
 
 const applicantSchema = new Schema({
@@ -11,24 +11,26 @@ const applicantSchema = new Schema({
         trim: true
     },
     categories: {
-        type: Array,
+        type: [String],
+        // type: Array(String),
         required: true,
-        enum: Object.values(positionCategories)
-    },
-    japaneseKnowledge: {
-        type: Boolean,
-        required: true
+        enum: Object.values(positionCategoriesEnum)
     },
     level: {
         type: String,
         required: true,
-        enum: Object.values(positionLevels)
+        enum: Object.values(positionLevelsEnum)
+    },
+    japaneseKnowledge: {
+        type: Boolean,
+        default: false,
+        // required: true
     }
 }, modelDefinition.schemaOptions);
 
 applicantSchema.methods = {
     normalize() {
-        const applicantToNormalize = this.toObject();
+        const toNormalize = this.toObject();
         const fieldsToRemove = [
             'createdAt',
             'updatedAt',
@@ -36,22 +38,11 @@ applicantSchema.methods = {
         ];
 
         fieldsToRemove.forEach((field) => {
-            delete applicantToNormalize[field];
+            delete toNormalize[field];
         });
 
-        return applicantToNormalize;
+        return toNormalize;
     }
 };
-
-applicantSchema.statics = {
-    async createApplicant(applicantObject) {
-        return this.create({...applicantObject});
-    }
-};
-
-applicantSchema.virtual('applicantInfo')
-    .get(function () {
-        return `Email: ${this.email} categories: ${this.categories.toString()} japaneseKnowledge: ${this.japaneseKnowledge} level: ${this.level}`;
-    });
 
 module.exports = model('applicant', applicantSchema);

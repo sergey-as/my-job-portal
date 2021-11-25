@@ -1,39 +1,43 @@
 const router = require('express')
     .Router();
 
-const {validatorsName} = require("../configs");
-const {applicantController} = require("../controllers");
-const {applicantMiddleware} = require("../middlewares");
-const {applicantValidator} = require("../validators");
+const {
+    dataInEnum: {BODY},
+    validatorsNameEnum: {
+        CREATE_APPLICANT_VALIDATOR,
+        PUT_APPLICANT_VALIDATOR
+    }
+} = require('../configs');
+const {applicantController} = require('../controllers');
+const {applicantMiddleware, commonMiddleware} = require('../middlewares');
+const {applicantValidator} = require('../validators');
+
 
 router.get(
     '/',
     applicantController.getApplicants
 );
+
 router.post(
     '/',
-    applicantMiddleware.isDataValid(applicantValidator, validatorsName.CREATE_APPLICANT, BODY),
-    applicantMiddleware.isApplicantPresent,
+    commonMiddleware.isDataValid(applicantValidator, CREATE_APPLICANT_VALIDATOR, BODY),
+    applicantMiddleware.isApplicantNotPresent,
     applicantController.createApplicant
 );
-router.get(
-    '/:user_id',
-    applicantMiddleware.isApplicantIdValid,
-    applicantMiddleware.isApplicantByIdPresent,
-    applicantController.getApplicantById
-);
+
 router.put(
     '/:applicant_id',
-    applicantMiddleware.isApplicantIdValid,
-    applicantMiddleware.isDataValid(userValidator, validatorsName.EMAIL_USER, PARAMS),
+    commonMiddleware.isIdValid('applicant_id'),
+    commonMiddleware.isDataValid(applicantValidator, PUT_APPLICANT_VALIDATOR, BODY),
     applicantMiddleware.isApplicantByIdPresent,
-    applicantController.updateApplicant
+    applicantController.putApplicantById
 );
+
 router.delete(
     '/:applicant_id',
-    applicantMiddleware.isApplicantIdValid,
+    commonMiddleware.isIdValid('applicant_id'),
     applicantMiddleware.isApplicantByIdPresent,
-    applicantController.deleteApplicant
+    applicantController.deleteApplicantById
 );
 
 module.exports = router;

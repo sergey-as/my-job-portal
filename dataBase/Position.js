@@ -1,18 +1,22 @@
 const {model, Schema} = require('mongoose');
 
-const {positionCategories, positionLevels} = require("../configs");
+const {positionCategoriesEnum, positionLevelsEnum} = require('../configs');
 const modelDefinition = require('./model.definition');
 
 const positionSchema = new Schema({
     category: {
         type: String,
         required: true,
-        enum: Object.values(positionCategories)
+        enum: Object.values(positionCategoriesEnum)
     },
     level: {
         type: String,
         required: true,
-        enum: Object.values(positionLevels)
+        enum: Object.values(positionLevelsEnum)
+    },
+    japaneseRequired: {
+        type: Boolean,
+        required: true
     },
     company: {
         type: String,
@@ -22,16 +26,33 @@ const positionSchema = new Schema({
     description: {
         type: String,
         trim: true
-    },
-    japaneseRequired: {
-        type: Boolean,
-        required: true
     }
 }, modelDefinition.schemaOptions);
 
+positionSchema.methods = {
+    normalize() {
+        const toNormalize = this.toObject();
+        const fieldsToRemove = [
+            'createdAt',
+            'updatedAt',
+            '__v'
+        ];
+
+        fieldsToRemove.forEach((field) => {
+            delete toNormalize[field];
+        });
+
+        return toNormalize;
+    }
+};
+
 positionSchema.virtual('positionInfo')
-    .get(function () {
-        return `Category: ${this.category} level: ${this.level} company: ${this.company} description: ${this.description} japaneseRequired: ${this.japaneseRequired}`;
+    .get(function() {
+        return `Category: ${this.category} `+
+            `level: ${this.level} `+
+            `japaneseRequired: ${this.japaneseRequired}` +
+            `company: ${this.company} `+
+            `description: ${this.description}`;
     });
 
 module.exports = model('position', positionSchema);
