@@ -45,4 +45,11 @@ applicantSchema.methods = {
     }
 };
 
+applicantSchema.virtual('skills')
+    .get(function() {
+        return `Categories: ${this.categories}`+
+            ` level: ${this.level}`+
+            ` japaneseKnowledge: ${this.japaneseKnowledge}`;
+    });
+
 module.exports = model('applicant', applicantSchema);

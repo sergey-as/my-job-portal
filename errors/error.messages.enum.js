@@ -1,21 +1,10 @@
 module.exports = {
-    ACCESS_DENIED: 'Access denied',
-    INVALID_TOKEN: 'Invalid token',
-    FILE_NOT_FOUND: 'File not found',
-    FILE_SIZE_TOO_BIG: 'The file size is too big',
-    NOT_SUPPORTED_FILE_FORMAT: 'Not supported file format',
-    NOT_VALID_USER_ID: 'Not valid user Id',
-    USER_ALREADY_EXISTS: 'User already exists',
-    USER_NOT_FOUND: 'User not found',
-    USER_WAS_DELETED: 'User was deleted',
-    WRONG_EMAIL_OR_PASSWORD: 'Wrong email or password',
-    WRONG_TEMPLATE_NAME: 'Wrong template name',
-    WRONG_TOKEN_TYPE: 'Wrong token type',
-
     APPLICANT_NOT_FOUND: 'Applicant not found',
     APPLICANT_ALREADY_EXISTS: 'Applicant already exists',
 
+    NOT_VALID_ID: 'Not valid Id',
+
     POSITION_NOT_FOUND: 'Position not found',
 
-    NOT_VALID_ID: 'Not valid Id',
+    WRONG_TEMPLATE_NAME: 'Wrong template name',
 };

@@ -44,7 +44,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"you1.mail@mail.run\",\r\n    \"categories\": [\"react\", \"angular\"],\r\n    \"level\": \"middle\"\r\n}",
+							"raw": "{\r\n    \"email\": \"you7.mail@mail.run\",\r\n    \"categories\": [\"nodejs\", \"javascript\"],\r\n    \"level\": \"junior\",\r\n    \"japaneseKnowledge\": true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -70,7 +70,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"you2.mail@mail.run\",\r\n    \"categories\": [\"react\", \"angular\"],\r\n    \"level\": \"middle\",\r\n    \"japaneseKnowledge\": true\r\n}",
+							"raw": "{\r\n    \"email\": \"you2.mail@mail.run\",\r\n    \"categories\": [\"react\", \"javascript\"],\r\n    \"level\": \"junior\",\r\n    \"japaneseKnowledge\": true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -78,13 +78,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{api_host}}/applicants/619e101613d7e08bf158203f",
+							"raw": "{{api_host}}/applicants/61a53ed3f60389a835911c2e",
 							"host": [
 								"{{api_host}}"
 							],
 							"path": [
 								"applicants",
-								"619e101613d7e08bf158203f"
+								"61a53ed3f60389a835911c2e"
 							]
 						}
 					},
@@ -105,13 +105,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{api_host}}/applicants/619e101613d7e08bf158203f",
+							"raw": "{{api_host}}/applicants/61a53ed3f60389a835911c2e",
 							"host": [
 								"{{api_host}}"
 							],
 							"path": [
 								"applicants",
-								"619e101613d7e08bf158203f"
+								"61a53ed3f60389a835911c2e"
 							]
 						}
 					},
@@ -129,7 +129,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"category\": \"nodejs\",\r\n    \"level\": \"junior\",\r\n    \"company\": \"Rakuten\",\r\n    \"description\": \"We are looking for people who are flexible and highly skilled, with an interest in languages and other cultures. We are open to overseas candidates looking to relocate to Japan.\",\r\n    \"japaneseRequired\": false\r\n}",
+							"raw": "{\r\n    \"category\": \"react\",\r\n    \"level\": \"middle\",\r\n    \"company\": \"Rakuten\",\r\n    \"description\": \"We are looking for people who are flexible and highly skilled, with an interest in languages and other cultures. We are open to overseas candidates looking to relocate to Japan.\",\r\n    \"japaneseRequired\": true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -155,7 +155,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"category\": \"angular\",\r\n    \"level\": \"junior\",\r\n    \"company\": \"Raketa\",\r\n    \"description\": \"We are looking for people who are flexible and highly skilled, with an interest in languages and other cultures. We are open to overseas candidates looking to relocate to Japan.\",\r\n    \"japaneseRequired\": true\r\n}",
+							"raw": "{\r\n    \"category\": \"nodejs\",\r\n    \"level\": \"junior\",\r\n    \"company\": \"Raketa\",\r\n    \"description\": \"We are looking for people who are flexible and highly skilled, with an interest in languages and other cultures. We are open to overseas candidates looking to relocate to Japan.\",\r\n    \"japaneseRequired\": true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -192,7 +192,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{api_host}}/positions?company=kut",
+							"raw": "{{api_host}}/positions",
 							"host": [
 								"{{api_host}}"
 							],
@@ -222,7 +222,8 @@
 								},
 								{
 									"key": "company",
-									"value": "kut"
+									"value": "kut",
+									"disabled": true
 								},
 								{
 									"key": "tag",
@@ -252,13 +253,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{api_host}}/positions/619fb3bfe85f0464229ef9a4",
+							"raw": "{{api_host}}/positions/619fc3087d44065f76aebc4a",
 							"host": [
 								"{{api_host}}"
 							],
 							"path": [
 								"positions",
-								"619fb3bfe85f0464229ef9a4"
+								"619fc3087d44065f76aebc4a"
 							]
 						}
 					},
@@ -333,13 +334,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{api_host}}/positions/619fb3bfe85f0464229ef9a4",
+							"raw": "{{api_host}}/positions/61a660fcfbede603c30d2a17",
 							"host": [
 								"{{api_host}}"
 							],
 							"path": [
 								"positions",
-								"619fb3bfe85f0464229ef9a4"
+								"61a660fcfbede603c30d2a17"
 							]
 						}
 					},

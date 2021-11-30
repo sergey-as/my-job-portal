@@ -48,11 +48,11 @@ positionSchema.methods = {
 
 positionSchema.virtual('positionInfo')
     .get(function() {
-        return `Category: ${this.category} `+
-            `level: ${this.level} `+
-            `japaneseRequired: ${this.japaneseRequired}` +
-            `company: ${this.company} `+
-            `description: ${this.description}`;
+        return `Category: ${this.category}`+
+            ` level: ${this.level}`+
+            ` japaneseRequired: ${this.japaneseRequired}` +
+            ` company: ${this.company}`+
+            ` description: ${this.description}`;
     });
 
 module.exports = model('position', positionSchema);

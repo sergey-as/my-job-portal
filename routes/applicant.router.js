@@ -15,7 +15,7 @@ const {applicantValidator} = require('../validators');
 
 router.get(
     '/',
-    applicantController.getApplicants
+    applicantController.getAllApplicants
 );
 
 router.post(

@@ -1,8 +1,7 @@
 const {Position} = require('../dataBase');
 
 module.exports = {
-    getAllPositions: (query = {}) => {
-        const {...filters} = query;
+    getAllPositions: (filters = {}) => {
         const findObject = {};
 
         Object.keys(filters)
